@@ -27,7 +27,7 @@ export class SignupPageComponent {
   // Submit handler
   onSubmit(): void {
     console.log('Form Data:', this.signUpForm.value); // Form values on submission
-    const res = this.apiCallsService.submitSignUp(this.signUpForm.value);
+    const res: number = this.apiCallsService.submitSignUp(this.signUpForm.value);
     if (res === 200) {
       alert('Form submitted successfully!');
     }

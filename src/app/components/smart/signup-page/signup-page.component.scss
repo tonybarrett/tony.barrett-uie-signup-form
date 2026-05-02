@@ -1,0 +1,15 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    ::before {
+        content: " * ";
+    }
+}

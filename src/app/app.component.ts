@@ -9,5 +9,5 @@ import { SignupPageComponent } from './components/smart/signup-page/signup-page.
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'signup';
+  title = 'Sign Up Page using a Reactive form (v17)';
 }

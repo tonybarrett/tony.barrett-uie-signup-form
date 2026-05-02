@@ -5,7 +5,7 @@
   <div>
     <label for="firstName">First name:</label>
     <input id="firstName" formControlName="firstName" />
-    @if ("signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched") {
+    @if (signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched) {
       <div class="error">
         First name is required.
       </div>
@@ -16,7 +16,7 @@
   <div>
     <label for="lastName">Last name:</label>
     <input id="lastName" formControlName="lastName" />
-    @if ("signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched") {
+    @if (signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched) {
       <div class="error">
         Last name is required.
       </div>
@@ -27,7 +27,7 @@
   <div>
     <label for="email">Email:</label>
     <input id="email" formControlName="email" />
-    @if ("signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched") {
+    @if (signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched) {
       <div class="error">
         A valid email is required.
       </div>
@@ -36,5 +36,5 @@
 
 
   <!-- Submit Button -->
-  <button type="submit" [disabled]="signUpForm.invalid" (click)="onSubmit">Sign Up</button>
+  <button type="submit" class="centre" [disabled]="signUpForm.invalid" (click)="onSubmit">Sign Up</button>
 </form>

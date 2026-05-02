@@ -2,8 +2,11 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+    .centre {
+        align-self: center;
+    }
 }
 
 .error {

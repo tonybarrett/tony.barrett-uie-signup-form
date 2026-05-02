@@ -9,10 +9,10 @@ export class ApiCallsService {
   constructor() { }
 
   submitSignUp(formData: SignupForm): number {
-    // Simulate an API call with a delay
+    // Simulate an API call with a delay of 1 second returned a 200 status code
     setTimeout(() => {
       console.log('API Call - Form Data Submitted:', formData);
-    }, 1000); // Simulated delay of 1 second
+    }, 1000);
     return 200;
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ApiCallsService } from '../../../services/api-calls.service';
 
 @Component({
   selector: 'app-signup-page',
@@ -11,7 +12,10 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
 export class SignupPageComponent {
   signUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private apiCallsService: ApiCallsService
+  ) {
     // Define form fields with validation rules
     this.signUpForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -22,10 +26,10 @@ export class SignupPageComponent {
 
   // Submit handler
   onSubmit(): void {
-    if (this.signUpForm.valid) {
-      console.log('Form Data:', this.signUpForm.value); // Form values on submission
-    } else {
-      console.log('Form is invalid.');
+    console.log('Form Data:', this.signUpForm.value); // Form values on submission
+    const res = this.apiCallsService.submitSignUp(this.signUpForm.value);
+    if (res === 200) {
+      alert('Form submitted successfully!');
     }
   }
 
